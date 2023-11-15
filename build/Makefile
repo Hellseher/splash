@@ -806,7 +806,7 @@ targz:
 
 test: test1 test2 test3 test_slicer test_prompt test-parse
 
-test1: interpolate3D_projection.o interpolate3D_xsec.o test_interpolate3D.o
+test1: interpolate3D_projection.o interpolate3D_xsec.o $(TESTDIR)//test_interpolate3D.o
 	$(FC) $(FFLAGS) $(LDFLAGS) -o $(BINDIR)/test_interpolation3D $(TESTDIR)/test_interpolate3D.o interpolate3D_projection.o interpolate3D_xsec.o
 test2: transform.o $(TESTDIR)//test_transform.o
 	$(FC) $(FFLAGS) $(LDFLAGS) -o $(BINDIR)/test_transform $(TESTDIR)/test_transform.o transform.o
